@@ -1,0 +1,312 @@
+/* ========================================
+IMPORTS
+======================================== */
+@import url("https://fonts.googleapis.com/css2?family=Bpmf+Huninn&display=swap");
+
+/* ========================================
+RESET
+======================================== */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+ROOT VARIABLES
+======================================== */
+:root {
+  --main-bg-color: #f5f7fa;
+  --main-bg-btn: #f5f7fa;
+  --accent: #0be696;
+  --accent-hover: #09d185;
+  --accent-transparent: #0be6961a;
+  --main-color-text: #1f2937;
+  --main-border: #d3d3d3 solid 2px;
+  --accent-border: #0be696 solid 2px;
+  --main-border-radius: 0.8em;
+}
+
+/* ========================================
+BASE ELEMENTS
+======================================== */
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--main-bg-color);
+  color: var(--main-color-text);
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color-text);
+}
+
+/* ========================================
+LINE DIVIDER
+======================================== */
+.line {
+  height: 0.1em;
+  width: 100%;
+  background-color: #d3d3d3;
+  margin: 0.5em 0;
+}
+
+/* ========================================
+SITE NAME
+======================================== */
+.siteName {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--main-color-text);
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.siteName:hover {
+  color: var(--accent);
+}
+
+/* ========================================
+HEADER
+======================================== */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.8em 1.2em;
+  background-color: var(--main-bg-color);
+  /* border-bottom: var(--main-border); */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .leftSide,
+header .rightSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  flex-shrink: 0;
+}
+
+header .midl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ===== Search Bar ===== */
+header .midl .searchBar {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border: var(--main-border);
+  border-radius: var(--main-border-radius);
+  padding: 0.3em 0.8em;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+header .midl .searchBar:focus-within {
+  border-color: var(--accent);
+}
+
+.searchIcon {
+  color: #888;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+header .midl .searchBar input {
+  width: 100%;
+  padding: 0.6em 0.3em;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: var(--main-color-text);
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 1rem;
+}
+
+header .midl .searchBar .filterLabel {
+  white-space: nowrap;
+  color: #888;
+  font-size: 0.875rem;
+  padding-left: 0.5em;
+  border-left: 1px solid #d3d3d3;
+}
+
+/* ===== Icon Buttons ===== */
+.rightSide {
+  gap: 0.5em;
+}
+
+.iconBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--main-border-radius);
+  border: var(--main-border);
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color-text);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.iconBtn:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-transparent);
+}
+
+/* ========================================
+MAIN
+======================================== */
+main {
+  padding: 1.5em 2em;
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+/* ===== Results Info ===== */
+.resultsInfo {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.resultsInfo strong {
+  color: var(--main-color-text);
+  font-size: 0.875rem;
+}
+
+/* ===== Results List ===== */
+.result5 {
+  padding: 0 1.5em;
+}
+
+.result5 ol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  list-style: decimal;
+}
+
+.result5 ol li {
+  padding: 0.5em 0.3em;
+  font-size: 1rem;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.15s ease;
+}
+
+.result5 ol li:hover {
+  background-color: var(--accent-transparent);
+  border-radius: 0.4em;
+  padding-left: 0.6em;
+}
+
+.result5 ol li a {
+  color: #1a0dab;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.result5 ol li a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* ========================================
+PAGINATION
+======================================== */
+.pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.5em 0 1em;
+}
+
+.pages button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: var(--main-border);
+  background-color: transparent;
+  cursor: pointer;
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 0.875rem;
+  color: var(--main-color-text);
+  transition: all 0.2s ease;
+}
+
+.pages button:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-transparent);
+}
+
+.pages button.active,
+.pages button:focus {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #1f2937;
+  font-weight: bold;
+  outline: none;
+}
+
+.pages span {
+  color: #888;
+  font-size: 0.875rem;
+}
+
+/* ========================================
+FOOTER
+======================================== */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+  border-top: var(--main-border);
+}
+
+footer p {
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* ========================================
+RESPONSIVE
+======================================== */
+@media (max-width: 500px) {
+  header {
+    padding: 0.6em 0.8em;
+  }
+
+  main {
+    padding: 1em;
+  }
+
+  .result5 {
+    padding: 0 0.5em;
+  }
+}

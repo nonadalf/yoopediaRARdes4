@@ -1,0 +1,364 @@
+/* ========================================
+IMPORTS
+======================================== */
+@import url("https://fonts.googleapis.com/css2?family=Bpmf+Huninn&display=swap");
+
+/* ========================================
+RESET
+======================================== */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+ROOT VARIABLES
+======================================== */
+:root {
+  --main-bg-color: #f5f7fa;
+  --main-bg-btn: #f5f7fa;
+  --accent: #0be696;
+  --accent-hover: #09d185;
+  --accent-transparent: #0be6961a;
+  --main-color-text: #1f2937;
+  --main-border: #d3d3d3 solid 2px;
+  --accent-border: #0be696 solid 2px;
+  --main-border-radius: 0.8em;
+}
+
+/* ========================================
+BASE ELEMENTS
+======================================== */
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--main-bg-color);
+  color: var(--main-color-text);
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--main-color-text);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: var(--main-color-text);
+}
+
+h3 {
+  font-size: 1.1rem;
+  color: var(--main-color-text);
+}
+
+p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.8;
+}
+
+span {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color-text);
+}
+
+/* ========================================
+LINE DIVIDER
+======================================== */
+.line {
+  height: 0.1em;
+  width: 100%;
+  background-color: #d3d3d3;
+  margin: 1em 0;
+}
+
+/* ========================================
+HEADER
+======================================== */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.8em 1.2em;
+  background-color: var(--main-bg-color);
+  /* border-bottom: var(--main-border); */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .leftSide,
+header .rightSide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  flex-shrink: 0;
+}
+
+header .midl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ===== Site Name ===== */
+.siteName {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--main-color-text);
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.siteName:hover {
+  color: var(--accent);
+}
+
+/* ===== Search Bar ===== */
+header .midl .searchBar {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border: var(--main-border);
+  border-radius: var(--main-border-radius);
+  padding: 0.3em 0.8em;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+}
+
+header .midl .searchBar:focus-within {
+  border-color: var(--accent);
+}
+
+.searchIcon {
+  color: #888;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+header .midl .searchBar input {
+  width: 100%;
+  padding: 0.6em 0.3em;
+  outline: none;
+  border: none;
+  background: transparent;
+  color: var(--main-color-text);
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 1rem;
+}
+
+header .midl .searchBar .filterLabel {
+  white-space: nowrap;
+  color: #888;
+  font-size: 0.875rem;
+  padding-left: 0.5em;
+  border-left: 1px solid #d3d3d3;
+}
+
+/* ===== Icon Buttons ===== */
+header .rightSide {
+  gap: 0.5em;
+}
+
+.iconBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--main-border-radius);
+  border: var(--main-border);
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color-text);
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.iconBtn:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-transparent);
+}
+
+/* ========================================
+MAIN
+======================================== */
+main {
+  width: 100%;
+  flex: 1;
+  padding: 1.5em 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================
+ARTICLE HEADER
+======================================== */
+.headerArticle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.headerArticle .left {
+  flex: 1;
+}
+
+.headerArticle .right {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  flex-shrink: 0;
+}
+
+/* ===== Article Action Buttons ===== */
+.articleBtn {
+  width: 36px;
+  height: 36px;
+  border: var(--main-border);
+  border-radius: var(--main-border-radius);
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color-text);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.articleBtn:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-transparent);
+}
+
+/* ========================================
+ARTICLE BODY
+======================================== */
+.mainArticle {
+  width: 100%;
+  min-height: 300px;
+  background-color: #1f2937;
+  border-radius: var(--main-border-radius);
+  margin-bottom: 1em;
+  padding: 1.5em;
+  color: #f5f7fa;
+}
+
+.mainArticle p {
+  color: #e5e7eb;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* ========================================
+ARTICLE FOOTER (References)
+======================================== */
+.footerArticle {
+  width: 100%;
+}
+
+.footerArticle h2 {
+  margin-bottom: 0.2em;
+}
+
+.referencesContainer {
+  display: flex;
+  align-items: flex-start;
+  gap: 2em;
+}
+
+.referencesContainer .leftol,
+.referencesContainer .rightol {
+  flex: 1;
+}
+
+.referencesContainer ol {
+  padding-left: 1.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.referencesContainer ol li {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.referencesContainer ol a {
+  color: #2580ff;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.referencesContainer ol a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* ========================================
+FOOTER
+======================================== */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+  border-top: var(--main-border);
+}
+
+footer p {
+  font-size: 0.8rem;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* ========================================
+RESPONSIVE
+======================================== */
+@media (max-width: 700px) {
+  main {
+    padding: 1em;
+  }
+
+  .headerArticle {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .headerArticle h1 {
+    font-size: 1.7rem;
+  }
+
+  .referencesContainer {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    padding: 0.6em 0.8em;
+  }
+}

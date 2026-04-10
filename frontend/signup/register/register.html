@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="register.css" />
+    <title>Sign Up - Yoopedia</title>
+  </head>
+  <body>
+    <main>
+      <form id="registerForm">
+        <!-- ===== Step 1: Email ===== -->
+        <div class="step active" id="step1">
+          <header class="formHeader">
+            <div class="logo-icon">#</div>
+            <h1>Sign up<br />to start searching</h1>
+          </header>
+
+          <div class="formBody">
+            <div class="formGroup">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                required
+                placeholder="Enter your email address"
+              />
+              <span class="error-msg">البريد الإلكتروني غير صحيح</span>
+            </div>
+
+            <button type="button" class="nextBtn">
+              <i class="fa-solid fa-arrow-right"></i> Next
+            </button>
+
+            <div class="divider"><span>OR</span></div>
+
+            <div class="author">
+              <a href="#" id="googleSignUp" class="socialLogin">
+                <svg width="20" height="20" viewBox="0 0 48 48">
+                  <!-- اترك كل محتوى الـ svg كما هو تماماً -->
+                  <path
+                    fill="#EA4335"
+                    d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"
+                  />
+                  <path
+                    fill="#4285F4"
+                    d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.35-8.16 2.35-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"
+                  />
+                </svg>
+                <span>Sign up with Google</span>
+              </a>
+              <a href="#" class="socialLogin">
+                <i class="fa-brands fa-apple" style="font-size: 20px"></i>
+                <span>Sign up with Apple</span>
+              </a>
+            </div>
+
+            <div class="doyouhaveacc">
+              <span>Already have an account?</span>
+              <a href="/frontend/login/login.html">Log in</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Step 2: Password ===== -->
+        <div class="step" id="step2">
+          <header class="formHeader">
+            <div class="logo-icon">#</div>
+            <h1>Create<br />Password</h1>
+            <div class="progress">
+              <div class="subProgress" style="width: calc(100% / 3)"></div>
+            </div>
+            <div class="stepIndicator">
+              <button class="prevBtn" type="button">
+                <i class="fa-solid fa-angle-left"></i>
+              </button>
+              <span>
+                <span class="stepMeta">step 1 from 3</span><br />
+                <span class="stepLabel">tell us about you</span>
+              </span>
+            </div>
+          </header>
+
+          <div class="formBody">
+            <div class="formGroup">
+              <label for="password">Enter password</label>
+              <div class="passwordWrapper">
+                <input
+                  type="password"
+                  id="password"
+                  required
+                  placeholder="Enter your password"
+                />
+                <button
+                  type="button"
+                  class="togglePassword"
+                  id="togglePassword"
+                >
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="PasswordCalibrator">
+              <h2>Your password must contain:</h2>
+              <div class="oneLetter">
+                <input type="checkbox" disabled id="rule-letter" />
+                <span>At least one letter</span>
+              </div>
+              <div class="oneNumber">
+                <input type="checkbox" disabled id="rule-number" />
+                <span>At least one number</span>
+              </div>
+              <div class="tenChar">
+                <input type="checkbox" disabled id="rule-length" />
+                <span>At least 10 characters</span>
+              </div>
+            </div>
+
+            <button type="button" class="nextBtn">
+              <i class="fa-solid fa-arrow-right"></i> Next
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== Step 3: Personal Info ===== -->
+        <div class="step" id="step3">
+          <header class="formHeader">
+            <div class="logo-icon">#</div>
+            <h1>About<br />You</h1>
+            <div class="progress">
+              <div class="subProgress" style="width: calc(100% * 2 / 3)"></div>
+            </div>
+            <div class="stepIndicator">
+              <button class="prevBtn" type="button">
+                <i class="fa-solid fa-angle-left"></i>
+              </button>
+              <span>
+                <span class="stepMeta">step 2 from 3</span><br />
+                <span class="stepLabel">get personal info</span>
+              </span>
+            </div>
+          </header>
+
+          <div class="formBody">
+            <div class="formGroup">
+              <label for="name">Enter your name</label>
+              <span>This name will appear on your profile page.</span>
+              <input
+                type="text"
+                id="name"
+                required
+                placeholder="Enter your name"
+              />
+            </div>
+
+            <div class="formGroup">
+              <label>Enter your birth date</label>
+              <div class="bornDate">
+                <input
+                  type="number"
+                  id="day"
+                  required
+                  placeholder="Day"
+                  min="1"
+                  max="31"
+                />
+                <select id="months" name="months" required>
+                  <option value="">Month</option>
+                  <option value="January">يناير</option>
+                  <option value="February">فبراير</option>
+                  <option value="March">مارس</option>
+                  <option value="April">أبريل</option>
+                  <option value="May">مايو</option>
+                  <option value="June">يونيو</option>
+                  <option value="July">يوليو</option>
+                  <option value="August">أغسطس</option>
+                  <option value="September">سبتمبر</option>
+                  <option value="October">أكتوبر</option>
+                  <option value="November">نوفمبر</option>
+                  <option value="December">ديسمبر</option>
+                </select>
+                <input
+                  type="number"
+                  id="year"
+                  required
+                  placeholder="Year"
+                  min="1900"
+                  max="2025"
+                />
+              </div>
+            </div>
+
+            <div class="formGroup">
+              <label style="font-weight: bold">Enter your gender</label>
+              <span
+                >We use your gender to help personalize the content suggestions
+                and ads that appear to you.</span
+              >
+              <div class="genderRdio">
+                <div class="man">
+                  <input type="checkbox" class="single-choice" name="gender" />
+                  <span>Man</span>
+                </div>
+                <div class="woman">
+                  <input type="checkbox" class="single-choice" name="gender" />
+                  <span>Woman</span>
+                </div>
+                <div class="noone">
+                  <input type="checkbox" class="single-choice" name="gender" />
+                  <span>Prefer not to say</span>
+                </div>
+              </div>
+            </div>
+
+            <button type="button" class="nextBtn">
+              <i class="fa-solid fa-arrow-right"></i> Next
+            </button>
+          </div>
+        </div>
+
+        <!-- ===== Step 4: Policy ===== -->
+        <div class="step" id="step4">
+          <header class="formHeader">
+            <div class="logo-icon">#</div>
+            <h1>Almost<br />There!</h1>
+            <div class="progress">
+              <div class="subProgress" style="width: 100%"></div>
+            </div>
+            <div class="stepIndicator">
+              <button class="prevBtn" type="button">
+                <i class="fa-solid fa-angle-left"></i>
+              </button>
+              <span>
+                <span class="stepMeta">step 3 from 3</span><br />
+                <span class="stepLabel">check policy</span>
+              </span>
+            </div>
+          </header>
+
+          <div class="formBody">
+            <div class="policyBox">
+              <input type="checkbox" name="marketing" id="box1" />
+              <label
+                for="box1"
+                style="font-size: 15px; color: #555; cursor: pointer"
+              >
+                I do not wish to receive marketing messages from Yoopedia
+              </label>
+            </div>
+            <div class="policyBox">
+              <input type="checkbox" name="sharing" id="box2" />
+              <label
+                for="box2"
+                style="font-size: 15px; color: #555; cursor: pointer"
+              >
+                I allow my registration data to be shared with Yoopedia content
+                providers for marketing purposes.
+              </label>
+            </div>
+
+            <p class="hint">
+              Yoopedia offers a personalized service.<br />
+              By clicking the "Sign Up" button, you agree to Yoopedia's Terms of
+              Service.<br />
+              Please read how we process your personal data in our Privacy
+              Policy.
+            </p>
+
+            <button type="submit" class="nextBtn">
+              <i class="fa-solid fa-user-plus"></i> Sign Up
+            </button>
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <p>
+        This site is protected by reCAPTCHA and the Google<br />
+        Privacy Policy and Terms of Service apply
+      </p>
+    </footer>
+
+    <script type="module" src="register.js"></script>
+  </body>
+</html>

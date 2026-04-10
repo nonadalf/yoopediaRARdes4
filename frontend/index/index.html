@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bpmf+Huninn&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Yoopedia</title>
+  </head>
+  <body>
+    <header>
+      <!-- ===== Right Side ===== -->
+      <div class="rightSide">
+        <div class="logo"><h1>Yoopedia</h1></div>
+
+        <!-- Plant Popup -->
+        <div class="plant">
+          <div class="btnPlant" data-toggle="plantPop">
+            <img src="https://neal.fun/general/plant.webp" alt="" />
+          </div>
+          <div class="plantPop popup">
+            <header>
+              <h1>Yoopedia Plant</h1>
+              <button class="btnClose" data-close>
+                <i class="fa fa-close"></i>
+              </button>
+            </header>
+            <main>
+              <h2>Watering the plant</h2>
+              <img src="https://neal.fun/general/plant.webp" alt="" />
+              <p>
+                To keep the plant alive, you need to water it every day. Click
+                the button below to water the plant.
+              </p>
+              <button class="btnWater">Water the plant</button>
+            </main>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Left Side ===== -->
+      <div class="leftSide">
+        <!-- Language Popup -->
+        <div class="language">
+          <button class="btnLanguage" data-toggle="languageList">
+            <i class="fa-solid fa-earth-americas"></i>
+          </button>
+          <div class="languageList popup">
+            <header>
+              <h1>Language</h1>
+              <button class="btnClose" data-close>
+                <i class="fa fa-close"></i>
+              </button>
+            </header>
+            <main>
+              <button>English</button>
+              <button>Arabic</button>
+              <button>French</button>
+              <button>Tmazeght</button>
+            </main>
+          </div>
+        </div>
+
+        <!-- Suggest Article Popup -->
+        <div class="article">
+          <button class="btnSuggestArticle" data-toggle="articleList">
+            <i class="fa-solid fa-lightbulb"></i
+            ><span class="btn-label">suggest Article</span>
+          </button>
+          <div class="articleList popup">
+            <header>
+              <h1>Suggest an Article</h1>
+              <button class="btnClose" data-close>
+                <i class="fa fa-close"></i>
+              </button>
+            </header>
+            <main>
+              <div class="title">
+                <span>Title</span><input type="text" id="articleTitle" />
+              </div>
+              <div class="category">
+                <span>Category</span><input type="text" id="articleCategory" />
+              </div>
+              <div class="description">
+                <span>Description</span>
+                ><textarea cols="30" rows="10" id="articleDesc"></textarea>
+              </div>
+              <button class="btnSubmit" id="btnAddArticle">Submit</button>
+            </main>
+          </div>
+        </div>
+
+        <!-- Profile Popup -->
+        <div class="profile">
+          <button class="btnProfile" data-toggle="profileList">
+            <img src="profile.jfif" alt="" />
+          </button>
+          <div class="profileList popup">
+            <header>
+              <h1>Yoopedia ID</h1>
+              <button class="btnClose" data-close>
+                <i class="fa fa-close"></i>
+              </button>
+            </header>
+            <main>
+              <h1>Login</h1>
+              <p>To save your bookmarks,<br />passwords, and cards</p>
+              <a class="login" href="../login/login.html">Login</a>
+              <div class="email">
+                <i class="fa fa-envelope"></i><a href="#">Email</a>
+              </div>
+              <div class="disk">
+                <i class="fa-solid fa-hard-drive"></i><a href="#">Disk</a>
+              </div>
+              <div class="overlay"></div>
+              <div class="settings">
+                <i class="fa fa-cog"></i><a href="#">Settings</a>
+              </div>
+              <div class="id">
+                <i class="fa fa-id-card"></i
+                ><a href="../profile/profile.html">Account management</a>
+              </div>
+              <div class="help">
+                <i class="fa fa-question-circle"></i><a href="#">help</a>
+              </div>
+              <div class="feedback">
+                <i class="fa fa-comment"></i><a href="#">Feedback</a>
+              </div>
+              <!-- <div class="overlay"></div> -->
+            </main>
+            <footer>
+              <a href="#">Technologies</a>
+              <a href="#">About Yoopedia</a>
+              <a href="#">Terms of service</a>
+              <a href="#">Privacy policy</a>
+              <a href="#">Report a violation</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== Search Box ===== -->
+      <div class="boxSearch">
+        <!-- Category buttons (unchanged) -->
+        <div class="category">
+          <button>
+            <img src="Yoopedia (4).png" alt="" /><span>*****</span>
+          </button>
+          <button><img src="2.png" alt="" /><span>*****</span></button>
+          <button><img src="3.png" alt="" /><span>*****</span></button>
+          <button>
+            <img src="apps.svg" alt="" style="width: 2em" /><span></span>
+          </button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="searchBar">
+          <div class="searchIcon"><i class="fa fa-search"></i></div>
+          <input
+            class="searchInput"
+            type="search"
+            placeholder="Search for articles..."
+          />
+          <div class="overlay"></div>
+          <div class="searchOption">
+            <!-- Keyboard input toggle -->
+            <button class="keybor" type="button" title="Toggle Keyboard">
+              <i class="fa fa-keyboard"></i>
+            </button>
+            <!-- Custom/magic search -->
+            <button class="customSearch" title="Magic search" type="button">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </button>
+            <!-- Submit search -->
+            <button
+              class="btnSearch"
+              title="Search"
+              type="submit"
+              onclick="goToResultPage()"
+            >
+              <i class="fa-solid fa-arrow-up"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Article count -->
+        <div class="numberOfArticle"><span>500 Articles</span></div>
+      </div>   
+      <!-- ===== Featured Articles (unchanged) ===== -->
+      <div class="starArticle">
+        <div class="boxes">
+          <div class="box">algeria</div>
+          <div class="box">egypt</div>
+          <div class="box">tunisia</div>
+          <div class="box">morocco</div>
+          <div class="box">bosnia</div>
+          <div class="box">syria</div>
+          <div class="box">jordan</div>
+          <div class="box">lebanon</div>
+          <div class="box">iraq</div>
+        </div>
+      </div>
+    </main>
+    <!-- باقي Scripts -->
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
+
+<!-- اعطني اكواد register login main result article profile main ملفات js النهائية الكاملة النظيفة التي تحتوي على كل شيء -->

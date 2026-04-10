@@ -1,0 +1,304 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --main-bg-color: #f5f7fa;
+  --main-bg-color-popList: #f5f7fa;
+  --main-bg-hover: #e4e7eb;
+  --main-color-hover: #1f2937;
+  --main-bg-btn: #f5f7fa;
+  --secirndly-bg-btn: #0be696;
+  --main-color-btn: #222;
+  --main-color-text: #1f2937;
+  --main-border: #d3d3d3 solid 2px;
+  --secirndly-border: #0be696 solid 2px;
+  --main-border-redus: 0.8em;
+  --main-wh-cercle-btn: 40px;
+  --main-hight-btn: 40px;
+  --main-btn-padding: 1em;
+}
+
+/* ========================================
+POPUP BASE
+======================================== */
+.popup { display: none; }
+.popup.active { display: flex; flex-direction: column; }
+
+body {
+  background: var(--main-bg-color);
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  font-family: "Bpmf Huninn", sans-serif;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--main-bg-color); margin: 1em; }
+::-webkit-scrollbar-thumb { background-color: #222222a7; border-radius: var(--main-border-redus); }
+::-webkit-scrollbar-thumb:hover { background: var(--main-color-hover); border-radius: var(--main-border-redus); }
+
+/* ========================================
+HEADER
+======================================== */
+header { width: 100%; display: flex; justify-content: space-between; align-items: center; background-color: var(--main-bg-color); padding: 0.8em 2em; }
+header .rightSide, header .leftSide { display: flex; justify-content: center; align-items: center; gap: 1em; }
+header .leftSide .language, header .leftSide .profile, header .leftSide .article { display: flex; justify-content: center; align-items: center; gap: 1em; }
+header .rightSide .logo h1 { color: var(--main-color-text); font-size: 2em; }
+header .leftSide .profile, header .leftSide .article, header .leftSide .language, header .rightSide .plant { position: relative; }
+
+/* ========================================
+UNIFIED POPUP HEADER & CLOSE BUTTON
+======================================== */
+.plantPop > header,
+.languageList > header,
+.articleList > header,
+.profileList > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 1.2em;
+  background-color: var(--main-bg-color-popList);
+  border-radius: var(--main-border-redus) var(--main-border-redus) 0 0;
+  position: relative;
+  top: 0;
+  z-index: 10;
+}
+
+.plantPop > header h1,
+.languageList > header h1,
+.articleList > header h1,
+.profileList > header h1 {
+  color: var(--main-color-text);
+  font-size: 1.5em;
+}
+
+.btnClose {
+  border: none;
+  border-radius: 50%;
+  width: 2em;
+  height: 2em;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1em;
+  color: var(--main-color-text);
+  transition: background-color 0.2s ease;
+}
+.btnClose:hover { background-color: var(--main-bg-hover); }
+
+/* ========================================
+PLANT POPUP
+======================================== */
+header .rightSide .plant .btnPlant img { width: var(--main-wh-cercle-btn); height: var(--main-wh-cercle-btn); cursor: pointer; }
+header .rightSide .plant .plantPop { border: var(--main-border); position: absolute; top: 0; left: 0; z-index: 100; background-color: var(--main-bg-color-popList); height: 90vh; width: 30em; overflow: scroll; border-radius: var(--main-border-redus); box-shadow: #1f2937 0px 4px 20px; }
+header .rightSide .plant .plantPop > main { height: 100%; padding: 1em; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1em; }
+header .rightSide .plant .plantPop > main h2 { color: var(--main-color-text); }
+header .rightSide .plant .plantPop > main img { width: 200px; height: 200px; }
+header .rightSide .plant .plantPop > main p { text-align: center; }
+header .rightSide .plant .plantPop > main button { padding: 1em 10em; background-color: var(--secirndly-bg-btn); color: var(--main-color-text); border: var(--main-border); border-radius: var(--main-border-redus); cursor: pointer; }
+
+/* ========================================
+LEFT SIDE BUTTONS
+======================================== */
+header .leftSide button { padding: var(--main-btn-padding); display: flex; justify-content: center; align-items: center; background-color: var(--main-bg-btn); color: var(--main-color-btn); border-radius: var(--main-border-redus); border: var(--main-border); cursor: pointer; font-size: 1em; }
+header .leftSide .btnSuggestArticle { display: flex; justify-content: center; align-items: center; gap: 0.5em; white-space: nowrap; }
+header .leftSide .btnLogin, header .leftSide .btnSignUp { width: 10em; height: var(--main-hight-btn); border-radius: var(--main-border-redus); }
+header .leftSide .btnLogin { background-color: var(--main-bg-btn); border: var(--secirndly-border); }
+header .leftSide .btnLogin:hover { background-color: #adffe1; }
+header .leftSide .btnSignUp { background-color: var(--secirndly-bg-btn); border: var(--secirndly-border); }
+header .leftSide .profile .btnProfile { width: var(--main-wh-cercle-btn); height: var(--main-wh-cercle-btn); border-radius: 50%; background-color: var(--main-bg-btn); padding: 0; overflow: hidden; }
+header .leftSide .profile .btnProfile img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; display: block; }
+
+/* ========================================
+PROFILE POPUP
+======================================== */
+header .leftSide .profile .profileList { border: var(--main-border); position: absolute; top: 0; right: 0; background-color: var(--main-bg-color-popList); height: 90vh; width: 30em; overflow: scroll; border-radius: var(--main-border-redus); box-shadow: #1f2937 0px 4px 20px; }
+header .leftSide .profile .profileList > main { padding: 1em; height: auto; display: flex; flex-direction: column; background-color: var(--main-bg-color-popList); gap: 0.3em; }
+header .leftSide .profile .profileList > main h1 { color: var(--main-color-text); font-size: 1.5em; }
+header .leftSide .profile .profileList > main p { color: var(--main-color-text); font-size: 1em; margin-bottom: 1em; }
+header .leftSide .profile .profileList > main .login { color: var(--main-bg-btn); background-color: var(--main-color-btn); text-decoration: none; display: flex; justify-content: center; align-items: center; padding: 1em; border-radius: var(--main-border-redus); margin-bottom: 1em; }
+header .leftSide .profile .profileList > main .overlay { background-color: #929292; height: 2px; width: 100%; margin: 1em 0; }
+header .leftSide .profile .profileList > main .email,
+header .leftSide .profile .profileList > main .disk,
+header .leftSide .profile .profileList > main .settings,
+header .leftSide .profile .profileList > main .id,
+header .leftSide .profile .profileList > main .help,
+header .leftSide .profile .profileList > main .feedback { background-color: var(--main-bg-btn); color: var(--main-color-btn); border: 2px solid #91a9a000; border-radius: var(--main-border-redus); padding: 1em; cursor: pointer; display: flex; gap: 1em; align-items: center; }
+header .leftSide .profile .profileList > main .email a,
+header .leftSide .profile .profileList > main .disk a,
+header .leftSide .profile .profileList > main .settings a,
+header .leftSide .profile .profileList > main .id a,
+header .leftSide .profile .profileList > main .help a,
+header .leftSide .profile .profileList > main .feedback a { color: var(--main-color-btn); text-decoration: none; }
+header .leftSide .profile .profileList > main .email:hover,
+header .leftSide .profile .profileList > main .disk:hover,
+header .leftSide .profile .profileList > main .settings:hover,
+header .leftSide .profile .profileList > main .id:hover,
+header .leftSide .profile .profileList > main .help:hover,
+header .leftSide .profile .profileList > main .feedback:hover { background-color: var(--main-bg-hover); border: var(--main-border); }
+header .leftSide .profile .profileList > footer { display: flex; flex-direction: column; justify-content: center; padding: 1em; gap: 0.5em; background-color: var(--main-bg-color-popList); border-radius: 0 0 var(--main-border-redus) var(--main-border-redus); border-top: var(--main-border); }
+header .leftSide .profile .profileList > footer a { text-decoration: none; color: #1f29379f; }
+header .leftSide .profile .profileList > footer a:hover { text-decoration: none; color: var(--main-color-text); }
+
+/* ========================================
+ARTICLE POPUP
+======================================== */
+header .leftSide .article .btnSuggestArticle { width: 10em; height: var(--main-hight-btn); padding: var(--main-btn-padding); }
+header .leftSide .article .articleList { z-index: 100; border: var(--main-border); position: absolute; top: 0; right: 0; background-color: var(--main-bg-color-popList); height: 90vh; width: 30em; overflow: scroll; border-radius: var(--main-border-redus); box-shadow: #1f2937 0px 4px 20px; }
+header .leftSide .article .articleList > main { padding: 1em; display: flex; flex-direction: column; gap: 0.5em; }
+header .leftSide .article .articleList > main .title,
+header .leftSide .article .articleList > main .category,
+header .leftSide .article .articleList > main .description { color: var(--main-color-text); font-size: 1.5em; padding: .5em 1em; }
+header .leftSide .article .articleList > main .title input,
+header .leftSide .article .articleList > main .category input,
+header .leftSide .article .articleList > main textarea { width: 100%; height: 3em; padding: 0.5em; border: var(--main-border); color: var(--main-color-text); border-radius: var(--main-border-redus); outline: none; }
+
+/* ========================================
+LANGUAGE POPUP
+======================================== */
+header .leftSide .btnLanguage { width: var(--main-wh-cercle-btn); height: var(--main-hight-btn); border-radius: var(--main-border-redus); }
+header .leftSide .language .languageList { position: absolute; top: 0; right: 0; width: 20em; z-index: 100; background-color: var(--main-bg-color-popList); border: var(--main-border); border-radius: var(--main-border-redus); box-shadow: #1f2937 0px 4px 20px; }
+header .leftSide .language .languageList > main { display: flex; flex-direction: column; padding: 1em; gap: 0.5em; height: auto; border-radius: 0 0 var(--main-border-redus) var(--main-border-redus); }
+header .leftSide .language .languageList > main button { background-color: var(--main-bg-btn); color: var(--main-color-btn); border: var(--main-border); border-radius: var(--main-border-redus); padding: 1em; cursor: pointer; }
+
+/* ========================================
+MAIN
+======================================== */
+main { width: 100%; height: 100vh; background-color: var(--main-bg-color); }
+
+/* ========================================
+SEARCH BOX
+======================================== */
+main .boxSearch { width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background-color: var(--main-bg-color); padding: 3em; gap: 3em; }
+main .boxSearch .category { background-color: var(--main-bg-color); width: 90%; display: flex; justify-content: space-between; align-items: center; }
+main .boxSearch .category button { background-color: var(--main-bg-btn); color: var(--main-color-btn); border: var(--main-border); border-radius: var(--main-border-redus); width: 5em; height: 5em; cursor: pointer; }
+main .boxSearch .category button img { width: 4.5em; height: 4.5em; border-radius: var(--main-border-redus); }
+main .boxSearch .category button:focus { border: var(--secirndly-border); }
+main .boxSearch .searchBar { background-color: var(--main-bg-color); border: var(--main-border); border-radius: var(--main-border-redus); width: 90%; height: 4em; display: flex; justify-content: center; align-items: center; box-shadow: 2px 4px 100px rgba(255, 0, 60, 0.758); }
+main .boxSearch .searchBar .searchIcon { background-color: var(--main-bg-btn); width: 3em; height: 3em; display: flex; justify-content: center; align-items: center; border-radius: var(--main-border-redus); margin-right: 1em; }
+main .boxSearch .searchBar .searchIcon i { font-size: 20px; color: #5c5c5c; }
+main .boxSearch .searchBar input { width: 90%; height: 80%; border: none; border-radius: var(--main-border-redus); padding: 0.5em; outline: none; font-size: 1.2em; background-color: var(--main-bg-color); color: var(--main-color-text); font-family: "Bpmf Huninn", sans-serif; }
+main .boxSearch .searchBar .overlay { background-color: #a7a7a7; width: 1px; height: 2em; }
+main .boxSearch .searchBar .searchOption { display: flex; justify-content: center; align-items: center; gap: 0.5em; padding: 0.5em; height: 2em; }
+main .boxSearch .searchBar .searchOption button { display: flex; justify-content: center; align-items: center; background-color: var(--main-bg-btn); color: var(--main-color-btn); border: 2px solid transparent; border-radius: var(--main-border-redus); font-size: 18px; width: 42px; height: 42px; cursor: pointer; transition: all 0.15s ease; }
+main .boxSearch .searchBar .searchOption button:hover { background-color: #cbe1ff; }
+main .boxSearch .searchBar .searchOption button:focus { border-radius: var(--main-border-redus); background-color: var(--secirndly-bg-btn); outline: none; }
+main .boxSearch .searchBar .searchOption .btnSearch { background-color: var(--secirndly-bg-btn); }
+main .boxSearch .searchBar .searchOption .btnSearch:hover { background-color: #09d185; }
+main .boxSearch .numberOfArticle { margin-top: -1em; font-size: 1.3em; }
+main .boxSearch .numberOfArticle span { color: var(--main-color-text); }
+
+/* ========================================
+FEATURED ARTICLES
+======================================== */
+main .starArticle { width: 100%; height: auto; display: flex; align-items: start; justify-content: center; flex-wrap: wrap; padding: 2em; }
+main .starArticle .boxes { width: 80%; height: auto; display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 0.2em; }
+main .starArticle .boxes .box { width: calc((100% - 0.8em) / 5); height: 5em; border-radius: var(--main-border-redus); display: flex; align-items: center; justify-content: center; background-color: #0be696; cursor: pointer; padding: 1em; text-align: center; }
+
+
+
+
+/* ========================================
+RESPONSIVE — FINAL FIXED (Language Button Patched)
+======================================== */
+@media screen and (max-width: 768px) {
+  html, body { overflow-x: hidden; }
+
+  /* --- Header Layout --- */
+  header { padding: 0.5em 0.8em; gap: 0.4em; flex-wrap: nowrap !important; }
+  header .rightSide, header .leftSide { gap: 0.4em; flex-wrap: nowrap !important; }
+  header .rightSide .logo h1 { font-size: 1.2em; white-space: nowrap; }
+  header .rightSide .plant .btnPlant img { width: 32px; height: 32px; }
+
+  /* قاعدة عامة لأزرار الهيدر */
+  header .leftSide button {
+    width: 36px !important; height: 36px !important; padding: 0 !important; border-radius: 50% !important;
+  }
+
+  /* ✅ إصلاح جذري لزر اللغة: فرض الدائرة وتوسيط الأيقونة */
+  header .leftSide .btnLanguage {
+    width: 36px !important;
+    height: 36px !important;
+    padding: 0 !important;
+    border-radius: 50% !important; /* ← يجبر الحواف على أن تكون دائرة 100% */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  header .leftSide .btnLanguage i {
+    font-size: 1.1em !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+  }
+
+  /* ✅ زر الاقتراح: إخفاء النص وإبقاء الأيقونة */
+  header .leftSide .btnSuggestArticle .btn-label { display: none !important; }
+  header .leftSide .btnSuggestArticle {
+    display: flex !important; align-items: center !important; justify-content: center !important;
+  }
+  header .leftSide .btnSuggestArticle i {
+    font-size: 1.1em !important; margin: 0 !important;
+  }
+
+  header .leftSide .profile .btnProfile,
+  header .leftSide .profile .btnProfile img { width: 36px; height: 36px; }
+
+  /* --- Popups: Modal Style --- */
+  .plantPop, .profileList, .articleList, .languageList {
+    position: fixed !important; top: 50% !important; left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 92vw !important; max-width: 360px !important; max-height: 80vh !important;
+    right: auto !important; margin: 0 !important; z-index: 9999 !important; overflow-y: auto;
+  }
+
+  /* ✅ أزرار النوافذ المنبثقة (حجم مريح للنص والمس) */
+  .languageList > main button,
+  .plantPop > main button,
+  .articleList .btnSubmit {
+    width: 100% !important; min-height: 48px !important; padding: 0.8em 1em !important;
+    font-size: 1em !important; border-radius: var(--main-border-redus) !important;
+    white-space: normal !important; display: flex !important;
+    align-items: center !important; justify-content: center !important;
+  }
+  .articleList .btnSubmit {
+    background-color: var(--secirndly-bg-btn) !important; margin-top: 1em !important; font-weight: bold;
+  }
+
+  /* --- Search & Featured --- */
+  main .boxSearch { padding: 1.5em 1em; gap: 1.5em; }
+  main .boxSearch .category { width: 100%; gap: 0.5em; justify-content: center; }
+  main .boxSearch .category button { width: 4.5em; height: 4.5em; }
+  main .boxSearch .category button img { width: 4em; height: 4em; }
+  main .boxSearch .searchBar { width: 100%; height: 3.5em; }
+  main .boxSearch .searchBar input { font-size: 1em; }
+  main .boxSearch .searchBar .searchOption .keybor,
+  main .boxSearch .searchBar .searchOption .customSearch { display: none; }
+  main .boxSearch .searchBar .overlay { display: none; }
+  main .boxSearch .numberOfArticle { font-size: 1em; margin-top: 0; }
+
+  main .starArticle { padding: 1em 0.5em; }
+  main .starArticle .boxes { width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4em; }
+  main .starArticle .boxes .box { width: 100%; height: 4em; font-size: 0.9em; }
+}
+
+/* ===== Small Mobile (≤480px) ===== */
+@media screen and (max-width: 480px) {
+  header .rightSide .logo h1 { font-size: 1.1em; }
+  header .rightSide .plant { display: none; }
+  main .boxSearch { padding: 1em 0.5em; gap: 1em; }
+  main .boxSearch .category button { width: 4em; height: 4em; }
+  main .boxSearch .category button img { width: 3.5em; height: 3.5em; }
+  main .starArticle .boxes { grid-template-columns: 1fr; }
+  main .starArticle .boxes .box { height: 3.5em; }
+}
+
+
+
+

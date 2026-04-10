@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bpmf+Huninn&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="profile.css" />
+    <title>Profile - Yoopedia</title>
+  </head>
+  <body>
+
+    <!-- ===== Top Nav Header ===== -->
+    <header class="topNav">
+      <div class="leftSide">
+        <a href="/frontend/index/index.html" class="siteName">Yoopedia</a>
+      </div>
+      <div class="rightSide">
+        <button class="avatarBtn" title="Profile">
+          <img src="img/profilephoto.jfif" alt="Profile photo" id="avatarSmall" />
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="information">
+
+        <!-- ===== Profile Header ===== -->
+        <div class="profileHeader">
+          <div class="leftSide">
+            <h1>Your account</h1>
+            <span>Manage your account information.</span>
+          </div>
+          <div class="rightSide">
+            <div class="avatarLarge" title="Change photo">
+              <img src="img/profilephoto.jfif" alt="Profile photo" id="avatarLarge" />
+              <div class="avatarEdit">
+                <i class="fa-solid fa-pen"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Info Container ===== -->
+        <div class="main">
+          <div class="informationContainer">
+
+            <div class="infoGroup">
+              <div class="leftSide">
+                <h3>Full name</h3>
+                <span id="userName">Artyom Benyakhlaf</span>
+              </div>
+              <div class="rightSide">
+                <button class="editBtn">
+                  <i class="fa-solid fa-pen-to-square"></i> Edit name
+                </button>
+              </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="infoGroup">
+              <div class="leftSide">
+                <h3>Email</h3>
+                <span id="userEmail">artyombenyakhlaf@gmail.com</span>
+              </div>
+              <div class="rightSide">
+                <button class="editBtn">
+                  <i class="fa-solid fa-pen-to-square"></i> Edit email
+                </button>
+              </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="infoGroup">
+              <div class="leftSide">
+                <h3>Account created</h3>
+                <span id="userCreated">19 Jan 2026</span>
+              </div>
+              <div class="rightSide">
+                <button class="editBtn">
+                  <i class="fa-solid fa-pen-to-square"></i> Edit
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+      <button class="applyBtn">
+        <i class="fa-solid fa-check"></i> Apply
+      </button>
+    </footer>
+
+    <script type="module" src="/frontend/profile/profile.js"></script>
+  </body>
+</html>

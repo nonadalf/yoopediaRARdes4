@@ -1,0 +1,515 @@
+/* ========================================
+IMPORTS
+======================================== */
+@import url("https://fonts.googleapis.com/css2?family=Bpmf+Huninn&display=swap");
+
+/* ========================================
+RESET
+======================================== */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+ROOT VARIABLES
+======================================== */
+:root {
+  --main-bg-color: #f5f7fa;
+  --main-bg-btn: #f5f7fa;
+  --accent: #0be696;
+  --accent-hover: #09d185;
+  --accent-transparent: #0be6961a;
+  --main-color-text: #1f2937;
+  --main-border: #d3d3d3 solid 2px;
+  --accent-border: #0be696 solid 2px;
+  --main-border-radius: 0.8em;
+}
+
+/* ========================================
+BASE ELEMENTS
+======================================== */
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--main-bg-color);
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--main-color-text);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.1rem;
+  color: var(--main-color-text);
+}
+
+label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--main-color-text);
+}
+
+input,
+select {
+  font-size: 1rem;
+  color: var(--main-color-text);
+  width: 100%;
+  height: 3em;
+  padding-left: 10px;
+  background-color: var(--main-bg-btn);
+  border: var(--main-border);
+  border-radius: var(--main-border-radius);
+  outline: none;
+  transition: border-color 0.2s ease;
+  font-family: "Bpmf Huninn", sans-serif;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--accent);
+}
+
+p {
+  font-size: 0.875rem;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+span {
+  font-size: 0.875rem;
+  color: #1f2937;
+}
+
+a {
+  text-decoration: none;
+  color: var(--main-color-text);
+}
+
+/* ========================================
+LOGO ICON
+======================================== */
+.logo-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1f2937;
+  box-shadow: 0 4px 15px rgba(11, 230, 150, 0.4);
+}
+
+/* ========================================
+BUTTONS
+======================================== */
+.nextBtn,
+.prevBtn {
+  width: 100%;
+  height: 3em;
+  border-radius: var(--main-border-radius);
+  border: var(--accent-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  text-decoration: none;
+  color: var(--main-color-text);
+  cursor: pointer;
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.nextBtn {
+  background-color: var(--accent);
+}
+
+.nextBtn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(11, 230, 150, 0.35);
+}
+
+.prevBtn {
+  font-size: 1.3rem;
+  color: var(--main-color-text);
+  background-color: transparent;
+  border: none;
+  width: auto;
+  height: auto;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.prevBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ========================================
+ERROR MESSAGE
+======================================== */
+.error-msg {
+  color: red;
+  font-size: 0.8rem;
+  display: none;
+}
+
+.input-error {
+  border-color: red !important;
+}
+
+/* ========================================
+CUSTOM CHECKBOX
+======================================== */
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 2px solid rgba(47, 47, 47, 0.2);
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+input[type="checkbox"]:checked {
+  background: #1ce783;
+  border-color: #1ce783;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  position: absolute;
+  color: #000;
+  font-size: 0.75rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* ========================================
+PASSWORD WRAPPER
+======================================== */
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.passwordWrapper input {
+  padding-right: 3em;
+}
+
+.togglePassword {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #888;
+  font-size: 1rem;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.togglePassword:hover {
+  color: var(--main-color-text);
+}
+
+/* ========================================
+PASSWORD CALIBRATOR
+======================================== */
+.PasswordCalibrator {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6em;
+  padding: 1em;
+  border: var(--main-border);
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-bg-btn);
+}
+
+.PasswordCalibrator h2 {
+  font-size: 1rem;
+  color: var(--main-color-text);
+  margin-bottom: 0.3em;
+}
+
+.PasswordCalibrator > div {
+  display: flex;
+  align-items: center;
+}
+
+/* ========================================
+LAYOUT
+======================================== */
+header.formHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  padding: 2em;
+}
+
+header.formHeader h1 {
+  text-align: center;
+}
+
+main {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main form {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 2em;
+}
+
+.formBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 1em 0 2em;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+/* ========================================
+BORN DATE
+======================================== */
+.bornDate {
+  display: flex;
+  gap: 1em;
+}
+
+.bornDate input {
+  flex: 1;
+}
+
+.bornDate select {
+  flex: 2;
+}
+
+/* ========================================
+GENDER
+======================================== */
+.genderRdio {
+  display: flex;
+  gap: 1em;
+  margin-top: 0.5em;
+  flex-wrap: wrap;
+}
+
+.genderRdio > div {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 1em;
+  border: var(--main-border);
+  border-radius: var(--main-border-radius);
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  flex: 1;
+  min-width: 80px;
+  justify-content: center;
+}
+
+.genderRdio > div:hover {
+  border-color: var(--accent);
+}
+
+/* ========================================
+POLICY BOXES
+======================================== */
+.policyBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5em;
+}
+
+/* ========================================
+DIVIDER
+======================================== */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  color: #aaa;
+  font-size: 0.875rem;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #d3d3d3;
+}
+
+/* ========================================
+SOCIAL LOGIN
+======================================== */
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.author a.socialLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7em;
+  border: var(--accent-border);
+  border-radius: var(--main-border-radius);
+  width: 100%;
+  gap: 0.8em;
+  transition: background-color 0.2s ease;
+  color: var(--main-color-text);
+}
+
+.author a.socialLogin:hover {
+  background-color: var(--accent-transparent);
+}
+
+.author a.socialLogin span {
+  color: var(--main-color-text);
+  font-size: 0.95rem;
+}
+
+/* ========================================
+SIGN IN LINK
+======================================== */
+.doyouhaveacc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+.doyouhaveacc a {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 0.875rem;
+}
+
+/* ========================================
+HINT TEXT
+======================================== */
+.hint {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ========================================
+FOOTER
+======================================== */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1.5em;
+  text-align: center;
+}
+
+footer p {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* ========================================
+PROGRESS BAR
+======================================== */
+header .progress {
+  height: 0.5em;
+  width: 100%;
+  background-color: #d7d7d7;
+  border-radius: var(--main-border-radius);
+  overflow: hidden;
+}
+
+header .progress .subProgress {
+  height: 0.5em;
+  background-color: var(--accent);
+  border-radius: var(--main-border-radius);
+  transition: width 0.4s ease;
+}
+
+header .stepIndicator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  color: var(--main-color-text);
+}
+
+.stepMeta {
+  color: rgb(96, 96, 96);
+  font-size: 0.8rem;
+}
+
+.stepLabel {
+  color: var(--main-color-text);
+  font-size: 0.95rem;
+}
+
+/* ========================================
+STEP VISIBILITY
+======================================== */
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+/* ========================================
+RESPONSIVE
+======================================== */
+@media (max-width: 500px) {
+  main form {
+    padding: 0 1em;
+  }
+
+  header.formHeader h1 {
+    font-size: 1.7rem;
+  }
+
+  .bornDate {
+    flex-direction: column;
+  }
+
+  .genderRdio {
+    flex-direction: column;
+  }
+}
