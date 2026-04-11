@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bpmf+Huninn&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="feedback.css" />
+    <title>Feedback - Yoopedia</title>
+  </head>
+  <body>
+
+    <!-- ===== Header ===== -->
+    <header>
+      <div class="leftSide">
+        <a href="../index/index.html" class="siteName">Yoopedia</a>
+      </div>
+      <div class="rightSide">
+        <button class="iconBtn" title="Notifications">
+          <i class="fa-solid fa-bell"></i>
+        </button>
+        <button class="iconBtn" title="Profile">
+          <i class="fa-solid fa-user"></i>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="feedbackWrapper">
+
+        <!-- ===== Left: Info Panel ===== -->
+        <div class="infoPanel">
+          <div class="infoPanelInner">
+            <div class="brandMark">#</div>
+            <h1>We'd love<br />your feedback</h1>
+            <p>Your thoughts help us improve Yoopedia for everyone. Whether it's a bug, a suggestion, or just a kind word — we're all ears.</p>
+
+            <div class="infoItems">
+              <div class="infoItem">
+                <i class="fa-solid fa-bug"></i>
+                <span>Report a bug or issue</span>
+              </div>
+              <div class="infoItem">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>Suggest a new feature</span>
+              </div>
+              <div class="infoItem">
+                <i class="fa-solid fa-star"></i>
+                <span>Share a compliment</span>
+              </div>
+              <div class="infoItem">
+                <i class="fa-solid fa-comment-dots"></i>
+                <span>General feedback</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Right: Form ===== -->
+        <div class="formPanel">
+          <form id="feedbackForm">
+
+            <!-- Step indicator -->
+            <div class="stepBar">
+              <div class="stepDot active" data-step="1"></div>
+              <div class="stepLine"></div>
+              <div class="stepDot" data-step="2"></div>
+              <div class="stepLine"></div>
+              <div class="stepDot" data-step="3"></div>
+            </div>
+
+            <!-- ===== Step 1: Type ===== -->
+            <div class="formStep active" id="step1">
+              <h2>What kind of feedback?</h2>
+              <p class="stepDesc">Choose the category that best fits your feedback.</p>
+
+              <div class="typeGrid">
+                <button type="button" class="typeCard" data-type="bug">
+                  <i class="fa-solid fa-bug"></i>
+                  <span>Bug report</span>
+                </button>
+                <button type="button" class="typeCard" data-type="feature">
+                  <i class="fa-solid fa-lightbulb"></i>
+                  <span>Feature request</span>
+                </button>
+                <button type="button" class="typeCard" data-type="compliment">
+                  <i class="fa-solid fa-star"></i>
+                  <span>Compliment</span>
+                </button>
+                <button type="button" class="typeCard" data-type="other">
+                  <i class="fa-solid fa-comment-dots"></i>
+                  <span>Other</span>
+                </button>
+              </div>
+
+              <button type="button" class="nextBtn" id="step1Next" disabled>
+                Continue <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+
+            <!-- ===== Step 2: Details ===== -->
+            <div class="formStep" id="step2">
+              <h2>Tell us more</h2>
+              <p class="stepDesc">Describe your feedback in as much detail as you'd like.</p>
+
+              <div class="formGroup">
+                <label for="feedbackTitle">Title <span class="required">*</span></label>
+                <input type="text" id="feedbackTitle" placeholder="Short summary of your feedback" />
+                <span class="errorMsg">Please enter a title.</span>
+              </div>
+
+              <div class="formGroup">
+                <label for="feedbackMessage">Message <span class="required">*</span></label>
+                <textarea id="feedbackMessage" rows="5" placeholder="Describe your feedback in detail..."></textarea>
+                <span class="errorMsg">Please enter a message.</span>
+              </div>
+
+              <div class="formGroup">
+                <label for="feedbackEmail">Email <span class="optional">(optional)</span></label>
+                <input type="email" id="feedbackEmail" placeholder="your@email.com" />
+                <span class="errorMsg">Please enter a valid email.</span>
+              </div>
+
+              <!-- Rating -->
+              <div class="formGroup">
+                <label>Overall experience</label>
+                <div class="ratingRow">
+                  <button type="button" class="ratingBtn" data-rating="1" title="Very bad"><i class="fa-regular fa-face-tired"></i></button>
+                  <button type="button" class="ratingBtn" data-rating="2" title="Bad"><i class="fa-regular fa-face-frown"></i></button>
+                  <button type="button" class="ratingBtn" data-rating="3" title="Neutral"><i class="fa-regular fa-face-meh"></i></button>
+                  <button type="button" class="ratingBtn" data-rating="4" title="Good"><i class="fa-regular fa-face-smile"></i></button>
+                  <button type="button" class="ratingBtn" data-rating="5" title="Excellent"><i class="fa-regular fa-face-grin-stars"></i></button>
+                </div>
+              </div>
+
+              <div class="btnRow">
+                <button type="button" class="backBtn" id="step2Back">
+                  <i class="fa-solid fa-arrow-left"></i> Back
+                </button>
+                <button type="button" class="nextBtn" id="step2Next">
+                  Continue <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- ===== Step 3: Review & Submit ===== -->
+            <div class="formStep" id="step3">
+              <h2>Review & submit</h2>
+              <p class="stepDesc">Take a moment to review your feedback before sending.</p>
+
+              <div class="reviewCard">
+                <div class="reviewRow">
+                  <span class="reviewLabel">Type</span>
+                  <span class="reviewValue" id="reviewType">—</span>
+                </div>
+                <div class="line"></div>
+                <div class="reviewRow">
+                  <span class="reviewLabel">Title</span>
+                  <span class="reviewValue" id="reviewTitle">—</span>
+                </div>
+                <div class="line"></div>
+                <div class="reviewRow reviewMessageRow">
+                  <span class="reviewLabel">Message</span>
+                  <span class="reviewValue" id="reviewMessage">—</span>
+                </div>
+                <div class="line"></div>
+                <div class="reviewRow">
+                  <span class="reviewLabel">Rating</span>
+                  <span class="reviewValue" id="reviewRating">—</span>
+                </div>
+                <div class="line"></div>
+                <div class="reviewRow">
+                  <span class="reviewLabel">Email</span>
+                  <span class="reviewValue" id="reviewEmail">—</span>
+                </div>
+              </div>
+
+              <div class="btnRow">
+                <button type="button" class="backBtn" id="step3Back">
+                  <i class="fa-solid fa-arrow-left"></i> Back
+                </button>
+                <button type="submit" class="submitBtn" id="submitBtn">
+                  <i class="fa-solid fa-paper-plane"></i> Send feedback
+                </button>
+              </div>
+            </div>
+
+          </form>
+
+          <!-- ===== Success State ===== -->
+          <div class="successState" id="successState">
+            <div class="successIcon"><i class="fa-solid fa-check"></i></div>
+            <h2>Thank you!</h2>
+            <p>Your feedback has been sent successfully. We really appreciate you taking the time.</p>
+            <a href="../index/index.html" class="backHomeBtn">
+              <i class="fa-solid fa-house"></i> Back to Yoopedia
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>This site is protected by reCAPTCHA and the Google<br />
+      Privacy Policy and Terms of Service apply</p>
+    </footer>
+
+    <script type="module" src="feedback.js"></script>
+  </body>
+</html>
