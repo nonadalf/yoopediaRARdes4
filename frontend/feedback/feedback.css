@@ -1,1 +1,605 @@
+@import url("https://fonts.googleapis.com/css2?family=Bpmf+Huninn&display=swap");
 
+/* ========================================
+RESET
+======================================== */
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ========================================
+ROOT VARIABLES — same as project
+======================================== */
+:root {
+  --main-bg-color: #f5f7fa;
+  --main-bg-btn: #f5f7fa;
+  --accent: #0be696;
+  --accent-hover: #09d185;
+  --accent-transparent: #0be6961a;
+  --main-color-text: #1f2937;
+  --main-border: #d3d3d3 solid 2px;
+  --accent-border: #0be696 solid 2px;
+  --main-border-radius: 0.8em;
+}
+
+/* ========================================
+BASE
+======================================== */
+body {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--main-bg-color);
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 16px;
+  color: var(--main-color-text);
+  display: flex;
+  flex-direction: column;
+}
+
+h1 { font-size: 2.2rem; color: var(--main-color-text); line-height: 1.2; }
+h2 { font-size: 1.3rem; color: var(--main-color-text); }
+p  { font-size: 0.875rem; color: #555; line-height: 1.6; }
+span { font-size: 0.875rem; color: #555; }
+a { text-decoration: none; color: var(--main-color-text); }
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: #e5e7eb;
+  margin: 0.5em 0;
+}
+
+/* ========================================
+HEADER
+======================================== */
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8em 1.5em;
+  background-color: #fff;
+  border-bottom: var(--main-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.siteName {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--main-color-text);
+  letter-spacing: -0.5px;
+  transition: color 0.2s;
+}
+.siteName:hover { color: var(--accent); }
+
+header .rightSide { display: flex; gap: 0.5em; }
+
+.iconBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: var(--main-border);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--main-color-text);
+  transition: all 0.2s;
+}
+.iconBtn:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-transparent);
+}
+
+/* ========================================
+MAIN LAYOUT
+======================================== */
+main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.feedbackWrapper {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  gap: 0;
+  margin: 2em 1.5em;
+  border: var(--main-border);
+  border-radius: var(--main-border-radius);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 32px rgba(31, 41, 55, 0.07);
+}
+
+/* ========================================
+LEFT PANEL
+======================================== */
+.infoPanel {
+  width: 38%;
+  background-color: #1f2937;
+  padding: 2.5em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.infoPanelInner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.brandMark {
+  width: 56px;
+  height: 56px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1f2937;
+  box-shadow: 0 4px 16px rgba(11, 230, 150, 0.35);
+}
+
+.infoPanel h1 {
+  color: #fff;
+  font-size: 1.9rem;
+}
+
+.infoPanel > .infoPanelInner > p {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  line-height: 1.7;
+}
+
+.infoItems {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  margin-top: 0.5em;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  padding: 0.7em 1em;
+  border-radius: var(--main-border-radius);
+  background-color: rgba(255, 255, 255, 0.06);
+  transition: background-color 0.2s;
+}
+.infoItem:hover { background-color: rgba(255,255,255,0.1); }
+
+.infoItem i {
+  color: var(--accent);
+  font-size: 1rem;
+  width: 1.2em;
+  text-align: center;
+}
+
+.infoItem span {
+  color: #d1d5db;
+  font-size: 0.875rem;
+}
+
+/* ========================================
+RIGHT PANEL
+======================================== */
+.formPanel {
+  flex: 1;
+  padding: 2.5em 2.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 500px;
+}
+
+/* ========================================
+STEP BAR
+======================================== */
+.stepBar {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 2em;
+}
+
+.stepDot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: var(--main-border);
+  background: var(--main-bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #aaa;
+  transition: all 0.3s;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.stepDot::after {
+  content: attr(data-step);
+  font-size: 0.75rem;
+  color: inherit;
+}
+
+.stepDot.active {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #1f2937;
+}
+
+.stepDot.done {
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+.stepDot.done::after { content: "✓"; }
+
+.stepLine {
+  flex: 1;
+  height: 2px;
+  background-color: #d3d3d3;
+  transition: background-color 0.3s;
+}
+.stepLine.done { background-color: var(--accent); }
+
+/* ========================================
+FORM STEPS
+======================================== */
+.formStep { display: none; flex-direction: column; gap: 1.2em; }
+.formStep.active { display: flex; }
+
+.stepDesc {
+  font-size: 0.875rem;
+  color: #888;
+  margin-top: -0.5em;
+}
+
+/* ========================================
+TYPE GRID
+======================================== */
+.typeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8em;
+}
+
+.typeCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 1.2em 1em;
+  border: var(--main-border);
+  border-radius: var(--main-border-radius);
+  background: var(--main-bg-color);
+  cursor: pointer;
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 0.875rem;
+  color: var(--main-color-text);
+  transition: all 0.2s;
+}
+
+.typeCard i {
+  font-size: 1.4rem;
+  color: #aaa;
+  transition: color 0.2s;
+}
+
+.typeCard:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-transparent);
+}
+.typeCard:hover i { color: var(--accent); }
+
+.typeCard.selected {
+  border-color: var(--accent);
+  background-color: var(--accent-transparent);
+}
+.typeCard.selected i { color: var(--accent); }
+
+/* ========================================
+FORM GROUPS
+======================================== */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+}
+
+.formGroup label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--main-color-text);
+}
+
+.required { color: #ef4444; font-size: 0.8rem; }
+.optional { color: #aaa; font-size: 0.8rem; font-weight: 400; }
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.65em 0.9em;
+  border: var(--main-border);
+  border-radius: var(--main-border-radius);
+  background-color: var(--main-bg-color);
+  color: var(--main-color-text);
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus { border-color: var(--accent); }
+
+.formGroup input.input-error,
+.formGroup textarea.input-error { border-color: #ef4444; }
+
+.errorMsg {
+  color: #ef4444;
+  font-size: 0.8rem;
+  display: none;
+}
+
+/* ========================================
+RATING ROW
+======================================== */
+.ratingRow {
+  display: flex;
+  gap: 0.6em;
+  margin-top: 0.3em;
+}
+
+.ratingBtn {
+  width: 44px;
+  height: 44px;
+  border: var(--main-border);
+  border-radius: var(--main-border-radius);
+  background: var(--main-bg-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #aaa;
+  transition: all 0.2s;
+}
+.ratingBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background-color: var(--accent-transparent);
+}
+.ratingBtn.selected {
+  border-color: var(--accent);
+  background-color: var(--accent);
+  color: #1f2937;
+}
+
+/* ========================================
+BUTTONS
+======================================== */
+.btnRow {
+  display: flex;
+  gap: 0.8em;
+  margin-top: 0.5em;
+}
+
+.nextBtn,
+.submitBtn {
+  flex: 1;
+  height: 3em;
+  border-radius: var(--main-border-radius);
+  border: var(--accent-border);
+  background-color: var(--accent);
+  color: var(--main-color-text);
+  cursor: pointer;
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  transition: all 0.2s;
+}
+.nextBtn:hover,
+.submitBtn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(11, 230, 150, 0.3);
+}
+.nextBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.backBtn {
+  height: 3em;
+  padding: 0 1.2em;
+  border-radius: var(--main-border-radius);
+  border: var(--main-border);
+  background: transparent;
+  color: var(--main-color-text);
+  cursor: pointer;
+  font-family: "Bpmf Huninn", sans-serif;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.backBtn:hover {
+  border-color: var(--accent);
+  background-color: var(--accent-transparent);
+}
+
+/* ========================================
+REVIEW CARD
+======================================== */
+.reviewCard {
+  border: var(--main-border);
+  border-radius: var(--main-border-radius);
+  padding: 1.2em 1.5em;
+  background-color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.reviewRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1em;
+  padding: 0.4em 0;
+}
+
+.reviewMessageRow { align-items: flex-start; }
+
+.reviewLabel {
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: 600;
+  min-width: 70px;
+  flex-shrink: 0;
+}
+
+.reviewValue {
+  font-size: 0.875rem;
+  color: var(--main-color-text);
+  text-align: right;
+  word-break: break-word;
+}
+
+/* ========================================
+SUCCESS STATE
+======================================== */
+.successState {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2em;
+  text-align: center;
+  padding: 2em;
+  min-height: 400px;
+}
+
+.successState.active { display: flex; }
+
+.successIcon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #1f2937;
+  box-shadow: 0 4px 20px rgba(11, 230, 150, 0.4);
+  animation: popIn 0.4s ease;
+}
+
+@keyframes popIn {
+  0%   { transform: scale(0); opacity: 0; }
+  70%  { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.successState h2 { font-size: 1.6rem; }
+.successState p { max-width: 320px; color: #555; }
+
+.backHomeBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.7em 1.5em;
+  background-color: var(--accent);
+  border: var(--accent-border);
+  border-radius: var(--main-border-radius);
+  color: var(--main-color-text);
+  font-size: 0.95rem;
+  font-family: "Bpmf Huninn", sans-serif;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.backHomeBtn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+/* ========================================
+FOOTER
+======================================== */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  text-align: center;
+  border-top: var(--main-border);
+}
+footer p { font-size: 0.8rem; color: #888; line-height: 1.6; }
+
+/* ========================================
+RESPONSIVE
+======================================== */
+@media (max-width: 768px) {
+  .feedbackWrapper {
+    flex-direction: column;
+    margin: 1em 0.8em;
+  }
+
+  .infoPanel {
+    width: 100%;
+    padding: 1.8em 1.5em;
+  }
+
+  .infoPanel h1 { font-size: 1.5rem; }
+
+  .infoItems {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5em;
+  }
+
+  .formPanel {
+    padding: 1.8em 1.5em;
+  }
+
+  .typeGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .infoItems { grid-template-columns: 1fr; }
+  .typeGrid  { grid-template-columns: 1fr; }
+  .ratingRow { gap: 0.4em; }
+  .ratingBtn { width: 38px; height: 38px; font-size: 1.1rem; }
+  .formPanel { padding: 1.5em 1em; }
+}
